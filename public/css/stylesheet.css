@@ -1,0 +1,59 @@
+html {
+    background-color: #fff;
+    color: #333;
+}
+
+body {
+    font-family: 'Nunito Sans';
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding-left: 20px;
+    height: 5vh;
+    display: flex;
+    align-items: center;
+}
+
+div.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 95vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald';
+}
+
+p {
+    font-family: 'Nunito Sans'
+}
+
+button {
+    background-color: #ef060a;
+    color: #333;
+    font-family: 'Oswald';
+    font-weight: 500;
+    font-size: 1rem;
+    text-transform: uppercase;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 30px;
+    padding-right: 30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    margin: 0 0 1rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: .92308rem 2.26923rem;
+    border: 0px;
+    border-radius: 0;
+    outline: 0;
+    vertical-align: middle;
+}
