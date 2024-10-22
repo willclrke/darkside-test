@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Darkside Test</title>
+        <title>Darkside Form</title>
 
         <!-- Styles -->
         <link href="css/reset.css" rel="stylesheet">
@@ -19,7 +19,8 @@
         </header>
         <div class="main">
             <p>Hello world!</p>
-            <form>
+            <form method="POST" action="{{ route('customer.submit') }}">
+                @csrf
                 <label for="name">Name:</label><br>
                 <input type="text" id="name" name="name"><br>
                 <label for="email">Email:</label><br>
@@ -28,7 +29,7 @@
                 <input type="tel" id="phone" name="phone"><br>
                 <label for="address">Address:</label><br>
                 <input type="text" id="address" name="address"><br>
-                <button>Submit</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     </body>
