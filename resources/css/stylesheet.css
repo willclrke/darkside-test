@@ -5,26 +5,28 @@ html {
 
 body {
     font-family: 'Nunito Sans';
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
 }
 
 header {
     background-color: #000;
     color: #fff;
-    padding-left: 20px;
+    padding: 10px 20px;
     height: 5vh;
     display: flex;
     align-items: center;
 }
 
 div#content {
-    width: 1140px;
+    max-width: 1140px;
     margin: auto;
-    padding: 100px 0px;
+    padding: 100px 20px;
 }
 
 .row {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
     align-items: center;
@@ -45,6 +47,7 @@ div#intro {
 
 div#app {
     flex: 2;
+    width: -webkit-fill-available;
 }
 
 .toast {
@@ -121,7 +124,7 @@ button {
 }
 
 form#customer {
-    width: -webkit-fill-available;
+    width: 100%;
 }
 
 form input {
@@ -150,4 +153,67 @@ form label {
     font-size: 13px;
     line-height: 1.5;
     margin-bottom: 7px;
+}
+
+
+
+
+/* Media queries for responsiveness */
+@media (min-width: 1000px) {
+    .row {
+        flex-direction: row; /* Change to row on larger screens */
+    }
+
+    .column {
+        flex: 1; 
+    }
+
+    div#app {
+        flex: 2; 
+    }
+
+    div#intro {
+        flex: 1; 
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 599px) {
+    header {
+        justify-content: center; /* Center header text on mobile */
+    }
+
+    div#content {
+        padding: 20px;
+    }
+
+    div#app {
+        width: -webkit-fill-available /* Ensure the form container is full width */
+    }
+
+    .row {
+        flex-direction: column; /* Ensure columns stack */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+    }
+
+    form input {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
 }
