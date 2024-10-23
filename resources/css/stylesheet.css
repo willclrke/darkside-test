@@ -16,17 +16,35 @@ header {
     align-items: center;
 }
 
-
-div#app {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 95vh;
+div#content {
+    width: 1140px;
+    margin: auto;
+    padding: 100px 0px;
 }
 
-div.form {
-    width: 50%;
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+}
+  
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    padding: 30px;
+}
+
+div#intro {
+    background-color: #F2F2F2;
+    height: fit-content;
+}
+
+div#app {
+    flex: 2;
 }
 
 .toast {
@@ -56,11 +74,27 @@ div.form {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald';
+}
+
+h1 {
     text-transform: uppercase;
 }
 
 p {
-    font-family: 'Nunito Sans'
+    font-family: 'Nunito Sans';
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+ul {
+    list-style-position: outside;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+h1#title {
+    margin-bottom: 30px;
+    text-align: center;
 }
 
 button {
@@ -86,6 +120,9 @@ button {
     vertical-align: middle;
 }
 
+form#customer {
+    width: -webkit-fill-available;
+}
 
 form input {
     appearance: none;
@@ -98,13 +135,12 @@ form input {
     display: block;
     font-family: inherit;
     font-size: 13px;
-    height: 30px;
     margin: 0px;
     margin-bottom: 20px;
-    padding: 12.5px 30px;
+    padding: 10px 20px;
     -webkit-transition: border-color .1s ease-out;
     transition: border-color .1s ease-out;
-    width: 100%;
+    width: -webkit-fill-available;
 }
 
 form label {

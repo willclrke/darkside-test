@@ -1,19 +1,17 @@
 <template>
-    <div class="form">
-        <form @submit.prevent="submitForm">
-            <label for="name">Name:</label>
-            <input v-model="formData.name" type="text" id="name">
-            <label for="email">Email:</label>
-            <input v-model="formData.email" type="email" id="email">
-            <label for="phone">Phone:</label>
-            <input v-model="formData.phone" type="tel" id="phone">
-            <label for="address">Address:</label>
-            <input v-model="formData.address" type="text" id="address">
-            <button type="submit">Submit</button>
-        </form>
-        <div v-if="message" :class="['toast', isSuccess ? 'toast-success' : 'toast-error']" @click="dismissToast">
-            {{ message }}
-        </div>
+    <form id="customer" @submit.prevent="submitForm">
+        <label for="name">Name:</label>
+        <input v-model="formData.name" type="text" id="name">
+        <label for="email">Email:</label>
+        <input v-model="formData.email" type="email" id="email">
+        <label for="phone">Phone:</label>
+        <input v-model="formData.phone" type="tel" id="phone">
+        <label for="address">Address:</label>
+        <input v-model="formData.address" type="text" id="address">
+        <button type="submit">Submit</button>
+    </form>
+    <div v-if="message" :class="['toast', isSuccess ? 'toast-success' : 'toast-error']" @click="dismissToast">
+        {{ message }}
     </div>
 </template>
 
