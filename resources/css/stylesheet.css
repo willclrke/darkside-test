@@ -17,12 +17,16 @@ header {
 }
 
 
-div.main {
+div#app {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 95vh;
+}
+
+div.form {
+    width: 50%;
 }
 
 div.alert {
@@ -71,9 +75,6 @@ button {
     vertical-align: middle;
 }
 
-form {
-    width: 50%;
-}
 
 form input {
     appearance: none;
