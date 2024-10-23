@@ -11,7 +11,7 @@
             <input v-model="formData.address" type="text" id="address">
             <button type="submit">Submit</button>
         </form>
-        <div v-if="message" :class="{'alert alert-success': isSuccess, 'alert alert-danger': !isSuccess}">
+        <div v-if="message" :class="['toast', isSuccess ? 'toast-success' : 'toast-error']" @click="dismissToast">
             {{ message }}
         </div>
     </div>
@@ -40,10 +40,27 @@ export default {
                 this.message = response.data.success;
                 this.isSuccess = true;
                 this.formData = {}; // Reset form data
+                this.autoDismiss();
             } catch (error) {
-                this.message = error.response.data.errors.file[0];
+                if (error.response && error.response.data.errors) {
+                    // If there are validation errors, concatenate them
+                    this.message = Object.values(error.response.data.errors)
+                        .flat()
+                        .join(' '); // Join error messages into a single string
+                } else {
+                    this.message = 'An unexpected error occurred. Please try again.';
+                }
                 this.isSuccess = false;
+                this.autoDismiss();
             }
+        },
+        autoDismiss() {
+            setTimeout(() => {
+                this.message = '';
+            }, 6000);
+        },
+        dismissToast() {
+            this.message = '';
         }
     }
 };

@@ -56,9 +56,7 @@ class CustomerFormController extends Controller
             // Write data to file in JSON format
             File::put($filePath, json_encode($existingData, JSON_PRETTY_PRINT));
 
-            error_log('Success!');
-
-            return back()->with('success', $message);
+            return response()->json(['success' => $message]);
 
         } catch (\Exception $e) {
             
@@ -66,7 +64,7 @@ class CustomerFormController extends Controller
             Log::error('Error writing to file: ' . $e->getMessage());
 
             // Return an error response
-            return back()->withErrors(['file' => 'There was a problem saving your data. Please try again later.']);
+            return response()->json(['error' => 'There was a problem saving your data. Please try again later.'], 500);
             
         }
         
