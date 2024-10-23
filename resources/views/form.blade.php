@@ -8,9 +8,7 @@
         <title>Darkside Form</title>
 
         <!-- Styles -->
-        <link href="css/reset.css" rel="stylesheet">
-        <link href="css/stylesheet.css" rel="stylesheet">
-        @vite(['resources/js/app.js', 'resources/css/app.css'])
+        @vite(['resources/js/app.js', 'resources/css/reset.css', 'resources/css/stylesheet.css'])
         <!-- Fonts -->
         <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans" rel="stylesheet">
