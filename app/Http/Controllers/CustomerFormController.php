@@ -14,7 +14,11 @@ class CustomerFormController extends Controller
         $validatedData = $request->validate([
             'name' => 'required|min:3|max:255',
             'email' => 'required|email',
-            'phone' => 'required|min_digits:11|max_digits:11', // Could add more in depth phone/tel validation here using a library/dependency
+            'phone' => [
+                'required',
+                'regex:/^(?:\+44|0)7\d{9}$|^(?:\+44|0)1\d{3} \d{3} \d{3}$|^(?:\+44|0)2\d{3} \d{3} \d{4}$/',
+                'max:14', // Adjust max length for international formats
+            ],
             'address' => 'required|min:10|max:255', // Could add more in depth address validation here using a library/dependency
         ]);
         

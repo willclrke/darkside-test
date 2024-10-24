@@ -75,6 +75,19 @@ div#app {
     cursor: pointer; /* Indicate that it can be dismissed */
 }
 
+input.input-error {
+    border-color: #ff7d7d;
+}
+
+span.error {
+    display: block;
+    color: #ff7d7d;
+    line-height: 24px;
+    margin: .38462rem 0 -.53846rem;
+    width: 100%;
+    font-size: 13px;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Oswald';
 }
@@ -139,7 +152,6 @@ form input {
     font-family: inherit;
     font-size: 13px;
     margin: 0px;
-    margin-bottom: 20px;
     padding: 10px 20px;
     -webkit-transition: border-color .1s ease-out;
     transition: border-color .1s ease-out;
@@ -153,6 +165,7 @@ form label {
     font-size: 13px;
     line-height: 1.5;
     margin-bottom: 7px;
+    margin-top: 20px;
 }
 
 
