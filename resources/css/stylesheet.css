@@ -75,7 +75,7 @@ div#app {
     cursor: pointer; /* Indicate that it can be dismissed */
 }
 
-input.input-error {
+.input-error {
     border-color: #ff7d7d;
 }
 
@@ -140,7 +140,7 @@ form#customer {
     width: 100%;
 }
 
-form input {
+form input, textarea {
     appearance: none;
     background-color: #fff;
     border-color: #dcdcdc;
@@ -153,9 +153,14 @@ form input {
     font-size: 13px;
     margin: 0px;
     padding: 10px 20px;
-    -webkit-transition: border-color .1s ease-out;
     transition: border-color .1s ease-out;
     width: -webkit-fill-available;
+}
+
+form textarea {
+    resize: none;
+    min-height: 100px;
+    max-height: 200px;
 }
 
 form label {
