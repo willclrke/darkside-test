@@ -12,7 +12,6 @@ If Docker is not utilized, your application should retrieve and store data by re
 
 ### How the Application Achieves This:
 
-
 **Objective: Develop a straightforward form to save and update customer information**
 - The form captures customer data (name, email, phone, address) and validates it. 
 - It handles both the creation of new customer entries and the updating of existing ones by checking for duplicate names.
@@ -74,6 +73,14 @@ If Docker is not utilized, your application should retrieve and store data by re
 - Your understanding of responsive first design and building for devices of all sizes.
     - In the CSS I have employed simple media queries to ensure a responsive design, adapting the layout for different screen sizes. 
     - Flexbox is used for layout, making it inherently flexible and ensuring usability across devices.
+
+
+## Backlog
+
+With more time, I would've liked to have added the following features:
+ - Address checker by postcode (user could enter house name/number and postcode, then automatically generate full address)
+ - Ability to view/edit all data in table format (assuming this is an operations view and taking into consideration GDPR etc.)
+ - Automated testing - this isn't something I have explored much in my current role as we have always tested applications manually, but I'd like to learn.
 
 
 ## Instructions
