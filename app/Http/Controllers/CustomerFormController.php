@@ -23,45 +23,22 @@ class CustomerFormController extends Controller
         ]);
         
         try {
+
+            // Call the model to update existing or create new customer entry
+            $message = CustomerFormModel::updateOrCreateCustomer($validatedData);
             
-            // Retrieve existing customers from the model
-            $existingCustomers = CustomerFormModel::allCustomers();
-            $nameExists = false;
-
-            // Check for existing customer by name
-            foreach ($existingCustomers as &$entry) {
-                if ($entry['name'] === $validatedData['name']) {
-                    // Update the existing entry with new data
-                    $entry = array_merge($entry, $validatedData);
-                    $nameExists = true;
-                    break; // Exit loop if entry found
-                }
-            }
-
-            // Prepare success message
-            $message = $nameExists ? 'Existing details updated successfully!' : 'New details added successfully!';
-        
-            // If no existing entry was found, just go ahead and add the new data
-            if (!$nameExists) {
-                $existingCustomers[] = $validatedData;
-            }
-            
-            // Send the updated list of customers back to the model for saving to file
-            CustomerFormModel::saveCustomers($existingCustomers);
-
-            // Return success response
-            return response()->json(['success' => $message]);
+            // Return a response indicating success, along with the message
+            return response()->json(['success' => $message], 200);
 
         } catch (\Exception $e) {
-            
-            // Log the error message
-            Log::error('Error writing to file: ' . $e->getMessage());
 
-            // Return an error response with 500
+            // Log the error message along with the request data for better debugging
+            Log::error('Error processing customer data: ' . $e->getMessage(), ['request' => $request->all()]);
+            
+            // Return a JSON response indicating an error occurred, with a generic message
             return response()->json(['error' => 'There was a problem saving your data. Please try again later.'], 500);
-            
-        }
-        
 
+        }
+               
     }
 }

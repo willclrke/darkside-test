@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'sqlite'),
+    'default' => env('DB_CONNECTION', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -31,6 +31,7 @@ return [
 
     'connections' => [
 
+        /*
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DB_URL'),
@@ -111,7 +112,7 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
-
+        */
     ],
 
     /*
@@ -126,8 +127,10 @@ return [
     */
 
     'migrations' => [
+        /*
         'table' => 'migrations',
         'update_date_on_publish' => true,
+        */
     ],
 
     /*
@@ -142,6 +145,7 @@ return [
     */
 
     'redis' => [
+        /*
 
         'client' => env('REDIS_CLIENT', 'phpredis'),
 
@@ -167,6 +171,7 @@ return [
             'port' => env('REDIS_PORT', '6379'),
             'database' => env('REDIS_CACHE_DB', '1'),
         ],
+        */
 
     ],
 

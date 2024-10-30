@@ -85,9 +85,10 @@ With more time, I would've liked to have added the following features:
 
 ## Instructions
 
-1. Clone this repository 
+1. Clone this repository and move into it
     ```
     git clone https://github.com/willclrke/darkside-test.git
+    cd darkside-test
     ```
 2. Make sure you have Node.js, Composer and PHP installed
 3. Install PHP dependencies
@@ -98,17 +99,25 @@ With more time, I would've liked to have added the following features:
     ```
     npm install
     ```
-5. Build assets with vite
+5. Copy the example environment file and create your own
+   ```bash
+   cp .env.example .env
+   ```
+6. Generate application key
+    ```
+    php artisan key:generate
+    ```
+7. Build assets with vite
     ```
     npm run dev
     ```
-6. Start dev server
+8. Start dev server
     ```
     php artisan serve
     ```
 
-7. Open your web browser and navigate to http://localhost:8000 to access the application.
-8. To check data, open this file: 
+9. Open your web browser and navigate to http://localhost:8000 to access the application.
+10. To check data, open this file: 
     ```
     storage/app/data/CustomerData.json
     ```
